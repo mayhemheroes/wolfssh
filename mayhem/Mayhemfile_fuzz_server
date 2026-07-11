@@ -1,0 +1,9 @@
+project: wolfssh
+target: fuzz_server
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_server/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_server
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_server.dict
